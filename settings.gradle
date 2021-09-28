@@ -1,0 +1,2 @@
+rootProject.name = "Avro Android Example"
+include ':app'
