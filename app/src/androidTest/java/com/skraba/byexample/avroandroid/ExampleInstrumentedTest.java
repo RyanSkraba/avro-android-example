@@ -28,7 +28,8 @@ public class ExampleInstrumentedTest {
         assertEquals("com.skraba.byexample.avroandroid", appContext.getPackageName());
 
         User user = new User("David", 1, "blue");
+        User.getClassSchema().addProp("android", "check");
         ByteBuffer encoded = User.getEncoder().encode(user);
-        assertThat(encoded.position(), is(100));
+        assertThat(encoded.remaining(), is(24));
     }
 }
